@@ -1,0 +1,23 @@
+
+<div id="cameraPreview" class="cameraPreview" >
+  <div *ngIf="cameraActive">
+    <div class="view">
+      <div class="view__icon" [ngClass]="index === 1 ? 'left' : 'right'">
+        <ion-icon [name]="icon" ></ion-icon>
+      </div>
+      <div class="barcode" *ngIf="index === 1">
+        <img src="assets/images/barcode-outline.png" alt="" class="barcode__icon">
+      </div>
+    </div>
+    <p class="text">{{text}}</p>
+    <ion-icon class="icons" id="capture" (click)="captureImage()" name="radio-button-on-outline"></ion-icon>
+  </div>
+</div>
+
+<div *ngIf="image && !cameraActive">
+  <div class="imag">
+    <ion-img [src]="image"></ion-img>
+  </div>
+  <ion-icon class="icons" id="success" color="success" name="checkmark-outline" (click)="next()"></ion-icon>
+  <ion-icon class="icons" id="delete" color="danger" name="close-outline" (click)="clear()"></ion-icon>
+</div>

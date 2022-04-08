@@ -1,0 +1,36 @@
+<ion-header mode="ios" >
+  <ion-toolbar [ngClass]="setTransparency()">
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [ngClass]="setTransparency()">
+
+  <div *ngIf="presentation" class="presentation">
+    <h4>Procederemos a hacer capturas de tu cedula, da clic en aceptar para continuar</h4>
+    <ion-button (click)="next()" expand="block" >
+      Aceptar
+    </ion-button>
+  </div>
+
+  <div *ngIf="!presentation && index < 2" class="capture-container">
+    <app-cc-capture
+      [text]="text"
+      (step)="changeStep($event)"
+      (imagesArray)="getImages($event)"
+      (isClose)="changeState($event)"
+    >
+    </app-cc-capture>
+  </div>
+
+  <div *ngIf=" index >= 2 && images" class="final">
+    <div class="imag" *ngFor="let image of images">
+      <ion-img  [src]="image"></ion-img>
+    </div>
+    <ion-button (click)="initData()" expand="block" class="btnReset">
+      Reiniciar
+    </ion-button>
+  </div>
+
+
+</ion-content>

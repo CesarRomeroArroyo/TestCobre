@@ -1,0 +1,77 @@
+
+.text {
+  position: absolute;
+  text-align: center;
+  font-size: 16px;
+  top: 50%;
+  padding: 30px;
+}
+
+.icons {
+  position: absolute;
+  bottom: 25px;
+  z-index: 11;
+  width: 50px;
+  height: 50px;
+}
+
+.right{
+  margin-left: 54%;
+  margin-top: 13%;
+  font-size: 152px;
+  width: 42%; 
+  height: 66%; 
+}
+
+.left{
+  font-size: 90px;
+  margin-left: 8%;
+  width: 25%; 
+  height: 40%; 
+  margin-top: 6%;
+}
+
+.view{
+  position: absolute;
+  height: 241px; 
+  left: 10px;
+  width: calc(100vw - 20px); 
+  border: 1.5px solid #44c963; 
+  margin-top: 11.5%;
+
+  &__icon{
+    border: 1px solid #44c963; 
+    border-radius: 10px;
+
+    ion-icon{
+      opacity: 0.5;
+      color: black;
+    }
+  }
+}
+
+.barcode{
+  display:flex; 
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 25px;
+
+  &__icon{
+    width: 86%; 
+    height: 60px;
+  }
+}
+
+#capture {
+  left: calc(40%);
+  width: 72px;
+  height: 72px;
+}
+
+#success {
+  right: 20px;
+}
+
+#delete {
+  left: 20px;
+}
